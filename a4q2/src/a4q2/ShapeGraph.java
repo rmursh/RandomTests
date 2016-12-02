@@ -32,10 +32,8 @@ public class ShapeGraph extends Graph<Shape> {
 		Vertex<Shape> currentNode = vertexMap.get(key);
 		LinkedList<String> list = new LinkedList<String>();
         Dfs(currentNode,allpaths,list);
-        //masterList.removeLast();
-        //Dfs(currentNode, output);
+
         for(LinkedList<String> path : allpaths){
-        	//System.out.println(path);
         	if(sumList(path) >= threshold){
         		masterList.add(path);
         	}
@@ -48,10 +46,6 @@ public class ShapeGraph extends Graph<Shape> {
 
 		v.visited =true;
 		list.add(v.getKey());
-//		if(list.size() != 1){
-//			masterlist.add((LinkedList<String>) list.clone());
-//		}
-//		
 
         for(Edge e : v.adjList){
         	if(!e.getEndVertex().visited){
